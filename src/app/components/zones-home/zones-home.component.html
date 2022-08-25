@@ -1,0 +1,13 @@
+<button mat-stroked-button class="btn" color="accent" (click)="processWithoutAngularZone()">Without ngZone</button>
+<button mat-flat-button color="warn" (click)="processOutsideOfAngularZone()">ngZone</button>
+
+<hr>
+
+<p>Count - {{progress}}</p>
+
+<hr>
+
+<p>USAGES</p>
+<ul *ngFor="let usage of usages">
+    <li>{{usage}}</li>
+</ul>

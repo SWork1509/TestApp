@@ -1,0 +1,66 @@
+<!-- SAMPLE TEMPLATE 1 -->
+<ng-template #temp1 let-data="value">
+
+    <p>This is sample template 1. (#ng-template)</p>
+    <p>If <strong>ngTemplateOutlet</strong> renders through <strong>Div</strong> then div will be replaces by
+        <strong>ng-template tag</strong> and content of ng-template will render.
+    </p>
+
+    <hr>
+    {{data|json}}
+
+    <div *ngFor="let val of data">value received from it's reference is {{val.name}}</div>
+    <hr>
+
+</ng-template>
+
+<!-- SAMPLE TEMPLATE 2 -->
+<ng-template #parentTemplate>
+    <p>This template will send form Parent to the Child Component.</p>
+</ng-template>
+
+<ng-template #cardTemplate let-items="items">
+    <div class="card" *ngFor="let item of items">
+        <h1>{{item.header}}</h1>
+        <p>{{item.content}}</p>
+    </div>
+</ng-template>
+
+<ng-template #listTemplate let-items="items">
+    <ul class="list">
+        <li *ngFor="let item of items">
+            <strong>{{item.header}}</strong> ({{item.content}})
+        </li>
+    </ul>
+</ng-template>
+
+<!-- MAIN -->
+
+<p style="color: rgb(0, 255, 234);">ngTemplateOutlet</p>
+<strong>(PARENT COMPONENT)</strong>
+
+<ng-container [ngTemplateOutlet]="temp1" [ngTemplateOutletContext]="{value:dataArr}"></ng-container>
+<!-- <div *ngTemplateOutlet="temp1"></div> -->
+
+<app-customers-home [parentTemplate]="parentTemplate"></app-customers-home>
+
+<app-customers-home>
+    <i>This para is content Projected</i>
+</app-customers-home>
+
+<hr>
+
+<div>
+    <mat-form-field appearance="fill">
+        <mat-label>Select Mode</mat-label>
+        <mat-select (selectionChange)="selectionChange($event)">
+            <mat-option *ngFor="let mode of modes" [value]="mode">
+                {{mode}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+<ng-container [ngTemplateOutlet]="currentTemplate" [ngTemplateOutletContext]="{items:items}"></ng-container>
+
+<hr>

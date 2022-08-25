@@ -1,0 +1,10 @@
+<strong>(CHILD COMPONENT)</strong>
+
+<ng-container [ngTemplateOutlet]="parentTemplate"></ng-container>
+
+<!-- CONTENT PROJECTION FROM PARENT -->
+<ng-container [ngTemplateOutlet]="contentProjectionTemplate"></ng-container>
+
+<ng-template #contentProjectionTemplate>
+    <ng-content></ng-content>
+</ng-template>
