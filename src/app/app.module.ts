@@ -19,9 +19,8 @@ import { StoreModule } from '@ngrx/store';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OrdersModule } from './modules/orders/orders.module';
-// import { EffectsModule } from '@ngrx/effects';
-// import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-// import { environment } from '../environments/environment';
+import { EffectsModule } from '@ngrx/effects';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,11 +40,11 @@ import { OrdersModule } from './modules/orders/orders.module';
     BrowserAnimationsModule,
     LayoutModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     OrdersModule,
     MaterialModule,
-    // EffectsModule.forRoot([]),
-    // StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

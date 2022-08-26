@@ -9,8 +9,7 @@ import { bookReducer } from './store/books.reducer';
 // Material Module
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
-import { HttpClientModule } from '@angular/common/http';
-// import { EffectsModule } from '@ngrx/effects';
+import { EffectsModule } from '@ngrx/effects';
 import { BooksEffects } from './store/books.effects';
 
 @NgModule({
@@ -22,9 +21,8 @@ import { BooksEffects } from './store/books.effects';
     NgrxBooksRoutingModule,
     MatCardModule,
     MatListModule,
-    HttpClientModule,
     StoreModule.forFeature("mybooks", bookReducer),
-    // EffectsModule.forFeature([BooksEffects])
+    EffectsModule.forFeature([BooksEffects])
   ]
 })
 export class NgrxBooksModule { }
