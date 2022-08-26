@@ -24,6 +24,7 @@ import { MatCardModule } from '@angular/material/card';
     MatCardModule
   ],
   exports: [
+    CardsComponent,
     OrdersHomeComponent,
     OGrandParentComponent,
     OParentComponent,

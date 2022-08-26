@@ -16,7 +16,7 @@ export class SchematicNavComponent {
     { name: 'Custom Decorators', link: '/decorators' },
     { name: 'Component Communication', link: 'communication' },
     { name: 'Zones ', link: 'zones' },
-    { name: 'NGRX', link: 'ngrx' }
+    { name: 'NGRX (Lazy-Loaded)', link: 'ngrx' }
   ]
 
 
